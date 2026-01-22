@@ -563,68 +563,93 @@
             1) Create a form at https://formspree.io
             2) Replace the action URL below with your Formspree endpoint.
           -->
-          <<form action="https://formspree.io/f/xreenzay" method="POST" class="quote-form">
-  <div class="form-row">
-    <label>Full Name</label>
-    <input type="text" name="name" required />
-  </div>
+          <form class="quoteForm" action="https://formspree.io/f/xreenzay" method="POST">
+            <input type="hidden" name="_subject" value="New Quote Request — M & K Turnovers" />
 
-  <div class="form-row">
-    <label>Email</label>
-    <input type="email" name="email" required />
-  </div>
+            <div class="formGrid">
+              <div class="field">
+                <label for="q_name">Name</label>
+                <input id="q_name" name="name" type="text" placeholder="Your name" required />
+              </div>
 
-  <div class="form-row">
-    <label>Phone Number</label>
-    <input type="tel" name="phone" required />
-  </div>
+              <div class="field">
+                <label for="q_company">Company (optional)</label>
+                <input id="q_company" name="company" type="text" placeholder="Property management company" />
+              </div>
 
-  <div class="form-row">
-    <label>Property Address</label>
-    <input type="text" name="address" required />
-  </div>
+              <div class="field">
+                <label for="q_phone">Phone</label>
+                <input id="q_phone" name="phone" type="tel" placeholder="(985) 630-3652" required />
+              </div>
 
-  <div class="form-row">
-    <label>Bedrooms / Bathrooms</label>
-    <input type="text" name="beds_baths" placeholder="Example: 3BR / 2BA" required />
-  </div>
+              <div class="field">
+                <label for="q_email">Email</label>
+                <input id="q_email" name="email" type="email" placeholder="name@company.com" required />
+              </div>
 
-  <div class="form-row">
-    <label>Turn Type</label>
-    <select name="turn_type" required>
-      <option value="">Select one</option>
-      <option>Light Turn</option>
-      <option>Standard Turn</option>
-      <option>Heavy Turn</option>
-      <option>Renovation-Level</option>
-    </select>
-  </div>
+              <div class="field" style="grid-column:1 / -1;">
+                <label for="q_address">Property Address</label>
+                <input id="q_address" name="address" type="text" placeholder="123 Main St, Baton Rouge, LA" required />
+              </div>
 
-  <div class="form-row">
-    <label>Timeline</label>
-    <select name="timeline" required>
-      <option value="">Select one</option>
-      <option>ASAP (0–3 days)</option>
-      <option>This Week</option>
-      <option>Next 1–2 Weeks</option>
-      <option>Not Sure Yet</option>
-    </select>
-  </div>
+              <div class="field">
+                <label for="q_beds">Bedrooms</label>
+                <select id="q_beds" name="bedrooms" required>
+                  <option value="" selected disabled>Select</option>
+                  <option>1–2</option>
+                  <option>3</option>
+                  <option>4+</option>
+                </select>
+              </div>
 
-  <div class="form-row">
-    <label>Any notes / scope details?</label>
-    <textarea name="notes" rows="4" placeholder="Anything we should know?"></textarea>
-  </div>
+              <div class="field">
+                <label for="q_level">Turn Level</label>
+                <select id="q_level" name="turn_level" required>
+                  <option value="" selected disabled>Select</option>
+                  <option>Standard</option>
+                  <option>Heavy</option>
+                  <option>Not sure (recommend)</option>
+                </select>
+              </div>
 
-  <!-- optional anti-spam "honeypot" -->
-  <input type="text" name="_gotcha" style="display:none" />
+              <div class="field">
+                <label for="q_trash">Trash-out needed?</label>
+                <select id="q_trash" name="trash_out" required>
+                  <option value="" selected disabled>Select</option>
+                  <option>No</option>
+                  <option>Yes</option>
+                  <option>Not sure</option>
+                </select>
+              </div>
 
-  <button type="submit" class="btn-primary">Send Request</button>
+              <div class="field">
+                <label for="q_util">Utilities on?</label>
+                <select id="q_util" name="utilities_on" required>
+                  <option value="" selected disabled>Select</option>
+                  <option>Yes</option>
+                  <option>No</option>
+                  <option>Not sure</option>
+                </select>
+              </div>
 
-  <input type="hidden" name="_next" value="https://mkturnovers.com/thank-you.html"> 
-</form>
-            
+              <div class="field">
+                <label for="q_date">Target Completion Date</label>
+                <input id="q_date" name="target_completion" type="date" />
+              </div>
 
+              <div class="field" style="grid-column:1 / -1;">
+                <label for="q_notes">Notes / Access Instructions</label>
+                <textarea id="q_notes" name="notes" placeholder="Lockbox code, gate access, preferred timeline, special requests…"></textarea>
+              </div>
+            </div>
+
+            <button class="btn primary" type="submit">Send Quote Request</button>
+
+            <p class="mini formNote">
+              Prefer to text? Tap <a href="tel:19856303652">985-630-3652</a>.
+            </p>
+            <input type="hidden" name="_next" value="https://mkturnovers.com/thank-you.html">
+          </form>
 
         </div>
       </div>
